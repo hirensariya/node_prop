@@ -211,8 +211,10 @@ jQuery(function($){
           document.getElementById('skip-value-upper')
         ];
 
+
         skipSlider.noUiSlider.on('update', function( values, handle ) {
           skipValues[handle].innerHTML = values[handle];
+          skipValues[handle].value = values[handle];
         });
 
         // FOR PRICE SECTION

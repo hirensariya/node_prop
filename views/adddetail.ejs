@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body class="aa-price-range">
+    <!-- Pre Loader -->
+    <div id="aa-preloader-area">
+      <div class="pulse"></div>
+    </div>
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
+    <!-- END SCROLL TOP BUTTON -->
+
+    <%- include('./partials/nav.ejs') %>
+    <section id="aa-property-header">
+      <div class="container">
+        <form action="/add" method="post">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="aa-property-header-inner">
+                <h2>Properties Page</h2>
+                <ol class="breadcrumb">
+                  <li><a href="/">HOME</a></li>
+                  <li class="active">PROPERTIES</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section id="aa-properties">
+      <div class="container">
+        <form action="/add" method="post">
+          <div class="row">
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <select id="" name="cat">
+                <option selected="" value="0">Property Type</option>
+                <option value="Flat">Flat</option>
+                <option value="Land">Land</option>
+                <option value="Plot">Plot</option>
+                <option value="Commercial">Commercial</option>
+              </select>
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <select id="" name="profor">
+                <option selected="" value="0">Property For</option>
+                <option value="SELL">SELL</option>
+                <option value="RENT">RENT</option>
+                <option value="BOTH">BOTH</option>
+              </select>
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Property Price"
+                name="price"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Property Description"
+                name="dis"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Property Address"
+                name="address"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Number Of Bedroom"
+                name="bedroom"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Number Of Hall"
+                name="holl"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Number Of Kitchen"
+                name="kitchen"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Number Of Bathroom"
+                name="bathroom"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Number Of Belcony"
+                name="belcony"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <select id="" name="gym">
+                <option selected="" value="0">Property Have gym</option>
+                <option value="Yes">Yes</option>
+                <option value="NO">NO</option>
+              </select>
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <select id="" name="cctv">
+                <option selected="" value="0">Property Have CCTV</option>
+                <option value="Yes">YES</option>
+                <option value="NO">NO</option>
+              </select>
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <select id="" name="securitygard">
+                <option selected="" value="0">
+                  Property Have Security-guard
+                </option>
+                <option value="Yes">YES</option>
+                <option value="NO">NO</option>
+              </select>
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <select id="" name="playground">
+                <option selected="" value="0">Property Have Playground</option>
+                <option value="Yes">YES</option>
+                <option value="NO">NO</option>
+              </select>
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Agent Name"
+                name="agentname"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Agent Phone Nomber"
+                name="agentphone"
+              />
+            </div>
+          </div>
+          <div class="aa-single-advance-search">
+            <input class="aa-search-btn" type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs') %>
+    <!-- / Footer -->
+
+    <!-- jQuery library -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+    <!-- slick slider -->
+    <script type="text/javascript" src="js/slick.js"></script>
+    <!-- Price picker slider -->
+    <script type="text/javascript" src="js/nouislider.js"></script>
+    <!-- mixit slider -->
+    <script type="text/javascript" src="js/jquery.mixitup.js"></script>
+    <!-- Add fancyBox -->
+    <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+    <!-- Custom js -->
+    <script src="js/custom.js"></script>
+  </body>
+</html>
