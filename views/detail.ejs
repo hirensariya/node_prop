@@ -39,18 +39,17 @@
         <div class="col-md-8">
           <div class="aa-properties-content">            
             <!-- Start properties content body -->
+            <% data.forEach(alldata => { %>
             <div class="aa-properties-details">
              <div class="aa-properties-details-img">
-               <img src="img/slider/1.jpg" alt="img">
-               <img src="img/slider/2.jpg" alt="img">
-               <img src="img/slider/3.jpg" alt="img">
+               <img src="<%= alldata.upimage  %>" alt="img">
+               <img src="<%= alldata.upimage %>" alt="img">
+               <img src="<%= alldata.upimage %>" alt="img">
              </div>
              <div class="aa-properties-info">
-               <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, alias!</h2>
-               <span class="aa-price">$65000</span>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptatibus veniam non voluptate, ipsa eius magni aliquid ratione sit, odio reprehenderit in quis repudiandae dolor.</p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequatur, veritatis, ducimus in aliquam magnam voluptatibus ullam libero fugiat temporibus at, aliquid explicabo placeat eligendi, assumenda magni saepe eius consequuntur.</p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium dicta aliquid, autem, cum, impedit nostrum, rem molestias quisquam ab iure enim totam? Itaque esse ut adipisci officiis nulla repellendus ratione dolore, iste ex doloribus tenetur eos provident quam quasi maxime.</p>
+               <h2><%= alldata.titlename %></h2>
+               <span class="aa-price"><%= alldata.price %></span>
+               <p><%= alldata.dis %></p>
                <h4>Propery Features</h4>
                <ul>
                  <li>4 Bedroom</li>
@@ -149,7 +148,8 @@
 
              </div>
 
-            </div>           
+            </div>
+            <% }) %>            
           </div>
         </div>
         <!-- Start properties sidebar -->

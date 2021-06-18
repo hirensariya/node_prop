@@ -13,7 +13,8 @@ mongoose.connect(dburl, { useNewUrlParser: true, useUnifiedTopology: true })
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
+app.use('/uploads', express.static('uploads'));
+app.use(express.urlencoded({ extended: false }));
 
 app.use(regularRoutes);
 // app.use(serviceRoutes);

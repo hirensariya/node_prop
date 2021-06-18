@@ -11,8 +11,16 @@ const productSchema = new Schema({
         type: String,
         required: true,
     },
+    upimage: {
+        type: String,
+        required: true,
+    },
     price: {
-        type: Number,
+        type: String,
+        required: true,
+    },
+    titlename: {
+        type: String,
         required: true,
     },
     dis: {
@@ -25,19 +33,19 @@ const productSchema = new Schema({
     },
     bedroom: {
         type: Number,
-        required: true,
+        // required: true,
     },
     holl: {
         type: Number,
-        required: true
+        // required: true
     },
     kitchen: {
         type: Number,
-        required: true
+        // required: true
     },
     bathroom: {
         type: Number,
-        required: true
+        // required: true
     },
     belcony: {
         type: String,
@@ -59,14 +67,35 @@ const productSchema = new Schema({
         type: String,
         // required: true
     },
-    agentname: {
+    floorno: {
+        type: Number,
+        // required: true,
+    },
+    Area: {
         type: String,
         // required: true
     },
-    agentphone: {
+    far: {
+        type: String,
+        // required: true
+    },
+    faside: {
+        type: String,
+        // required: true,
+    },
+    exgate: {
         type: Number,
         // required: true
     },
+    agentname: {
+        type: String,
+        required: true,
+    },
+    agentphone: {
+        type: Number,
+        required: true,
+    },
+    
 }, { timestamps: true });
 
 const Product = mongoose.model('Product', productSchema);

@@ -30,31 +30,50 @@
     </section>
     <section id="aa-properties">
       <div class="container">
-        <form action="/add" method="post">
-          <div class="row">
-            <div
-              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
-              style="margin-top: 15px"
-            >
-              <select id="" name="cat">
-                <option selected="" value="0">Property Type</option>
-                <option value="Flat">Flat</option>
-                <option value="Land">Land</option>
-                <option value="Plot">Plot</option>
-                <option value="Commercial">Commercial</option>
-              </select>
-            </div>
-            <div
-              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
-              style="margin-top: 15px"
-            >
-              <select id="" name="profor">
-                <option selected="" value="0">Property For</option>
-                <option value="SELL">SELL</option>
-                <option value="RENT">RENT</option>
-                <option value="BOTH">BOTH</option>
-              </select>
-            </div>
+        <div class="row" style="display: flex; margin: auto">
+          <div class="aa-single-advance-search" style="margin-top: 15px">
+            <select id="cat" name="cat" onchange="div()" required="true">
+              <option selected="" value="0">Property Type</option>
+              <option value="Flat">Flat</option>
+              <option value="Shop">SHOP</option>
+              <option value="Plot">Plot</option>
+              <!-- <option value="Commercial">Commercial</option> -->
+            </select>
+          </div>
+          <div
+            class="aa-single-advance-search col-xl-6 col-md-6 col-sm-6"
+            style="margin-top: 15px"
+          >
+            <select id="profor" onchange="div()" required="true">
+              <option selected="" value="0">Property For</option>
+              <option value="SELL">SELL</option>
+              <option value="RENT">RENT</option>
+              <option value="BOTH">BOTH</option>
+            </select>
+
+        
+          </div>
+        </div>
+
+        <div
+          class="row flatdiv"
+          id="flatdiv"
+          style="margin-top: 30px; display: block"
+        >
+          <form action="/add" method="post" enctype="multipart/form-data">
+            <input
+              id="hcat"
+              type="hidden"
+              placeholder="Enter Property Price"
+              name="cat"
+            />
+            <input
+              type="hidden"
+              id="pproforp"
+              placeholder="Enter Property Price"
+              name="profor"
+            />
+            <input type="file" name="upimage" class="col-xl-12 col-md-12 col-sm-12" >
             <div
               class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
               style="margin-top: 15px"
@@ -63,6 +82,16 @@
                 type="text"
                 placeholder="Enter Property Price"
                 name="price"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Property Title"
+                name="titlename"
               />
             </div>
             <div
@@ -137,7 +166,7 @@
             </div>
             <div
               class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
-              style="margin-top: 15px"
+              style="margin-top: 20px; height: 30px"
             >
               <select id="" name="gym">
                 <option selected="" value="0">Property Have gym</option>
@@ -147,7 +176,7 @@
             </div>
             <div
               class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
-              style="margin-top: 15px"
+              style="margin-top: 20px; height: 30px"
             >
               <select id="" name="cctv">
                 <option selected="" value="0">Property Have CCTV</option>
@@ -157,7 +186,7 @@
             </div>
             <div
               class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
-              style="margin-top: 15px"
+              style="margin-top: 20px; height: 30px"
             >
               <select id="" name="securitygard">
                 <option selected="" value="0">
@@ -169,7 +198,7 @@
             </div>
             <div
               class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
-              style="margin-top: 15px"
+              style="margin-top: 20px; height: 30px"
             >
               <select id="" name="playground">
                 <option selected="" value="0">Property Have Playground</option>
@@ -197,11 +226,241 @@
                 name="agentphone"
               />
             </div>
+            <div class="aa-single-advance-search col-xl-12 col-md-12 col-sm-12">
+              <input class="aa-search-btn" type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
+        <div
+          class="row shopdiv"
+          id="shopdiv"
+          style="margin-top: 30px; display: none"
+        >
+          <form action="/shopadd" method="post" enctype="multipart/form-data">
+            <input
+              id="hcats"
+              type="hidden"
+              placeholder="Enter Property Price"
+              name="scat"
+            />
+            <input
+              type="hidden"
+              id="hprofors"
+              placeholder="Enter Property Price"
+              name="sprofor"
+            />
+            <input type="file" name="upimage" class="col-xl-12 col-md-12 col-sm-12">
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Property Price"
+                name="price"
+              />
+            </div>
+            <div
+            class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+            style="margin-top: 15px"
+          >
+            <input
+              type="text"
+              placeholder="Enter Property Title"
+              name="titlename"
+            />
           </div>
-          <div class="aa-single-advance-search">
-            <input class="aa-search-btn" type="submit" value="Submit" />
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Property Description"
+                name="dis"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Property Address"
+                name="address"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Floor Number Of The Shop"
+                name="floorno"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input type="text" placeholder="Area Of The Shop" name="Area" />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 20px; height: 30px"
+            >
+              <select id="" name="cctv">
+                <option selected="" value="0">Property Have CCTV</option>
+                <option value="Yes">YES</option>
+                <option value="NO">NO</option>
+              </select>
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 20px; height: 30px"
+            >
+              <select id="" name="far">
+                <option selected="" value="0">Furniture Is Availeble</option>
+                <option value="Yes">YES</option>
+                <option value="NO">NO</option>
+              </select>
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Agent/Owner Name"
+                name="agentname"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Agent Phone Nomber"
+                name="agentphone"
+              />
+            </div>
+            <div class="aa-single-advance-search">
+              <input
+                class="aa-search-btn"
+                style="margin-top: 20px"
+                type="submit"
+                value="Submit"
+              />
+            </div>
+          </form>
+        </div>
+        <div
+          class="row plotdiv"
+          id="plotdiv"
+          style="margin-top: 30px; display: none"
+        >
+          <form action="/plotadd" method="post" enctype="multipart/form-data">
+            <input
+              id="pcatp"
+              type="hidden"
+              placeholder="Enter Property Price"
+              name="pcat"
+            />
+            <input
+              type="hidden"
+              id="plotprofor"
+              placeholder="Enter Property Price"
+              name="newone"
+            />
+            <input type="file" name="upimage" class="col-xl-12 col-md-12 col-sm-12">
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Property Price"
+                name="price"
+              />
+            </div>
+            <div
+            class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+            style="margin-top: 15px"
+          >
+            <input
+              type="text"
+              placeholder="Enter Property Title"
+              name="titlename"
+            />
           </div>
-        </form>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Property Description"
+                name="dis"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Property Address"
+                name="address"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input type="text" placeholder="Road Facing side" name="faside" />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Number Of Exit Gate"
+                name="exgate"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Agent/Owner Name"
+                name="agentname"
+              />
+            </div>
+            <div
+              class="aa-single-advance-search col-xl-6 col-md-4 col-sm-12"
+              style="margin-top: 15px"
+            >
+              <input
+                type="text"
+                placeholder="Enter Agent Phone Nomber"
+                name="agentphone"
+              />
+            </div>
+            <div class="aa-single-advance-search">
+              <input
+                class="aa-search-btn"
+                style="margin-top: 20px"
+                type="submit"
+                value="Submit"
+              />
+            </div>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -226,3 +485,34 @@
     <script src="js/custom.js"></script>
   </body>
 </html>
+<script>
+  function div() {
+    const cat = document.getElementById("cat").value;
+    const profor = document.getElementById("profor").value;
+    if (cat == "Shop") {
+      document.getElementById("shopdiv").style.display = "block";
+      document.getElementById("flatdiv").style.display = "none";
+      document.getElementById("plotdiv").style.display = "none";
+      document.getElementById("hcats").value = cat;
+      document.getElementById("hprofors").value = profor;
+    } else if (cat == "Plot") {
+      document.getElementById("shopdiv").style.display = "none";
+      document.getElementById("flatdiv").style.display = "none";
+      document.getElementById("plotdiv").style.display = "block";
+      document.getElementById("pcatp").value = cat;
+      document.getElementById("plotprofor").value = profor;
+      // alert(document.getElementById("pcatp").value);
+      // alert(document.getElementById("plotprofor").value);
+    } else {
+      document.getElementById("shopdiv").style.display = "none";
+      document.getElementById("flatdiv").style.display = "block";
+      document.getElementById("plotdiv").style.display = "none";
+      document.getElementById("hcat").value = cat;
+      document.getElementById("pproforp").value = profor;
+      // const hcat=  document.getElementById("hcat").value
+      // const hprofor=  document.getElementById("hprofor").value
+      //   alert(hcat)
+    }
+  }
+  // div();
+</script>
